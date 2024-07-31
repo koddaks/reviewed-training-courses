@@ -24,6 +24,17 @@ const config = {
         },
         daylight: '#B5D8FF',
         bluelight: "#007AFF",
+        green: "#2CA129",
+        greendark: "#038A00",
+        red: "#D83434",
+        grey: "#EAEAEAB2",
+        greyLight: "#EBE8FA",
+        greyDark: "#616161",
+        purple: "#7B34D8",
+        yellow: "#FDD503",
+        
+
+
 
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
