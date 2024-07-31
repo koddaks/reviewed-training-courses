@@ -7,10 +7,7 @@ const Header = () => {
       <div className="md:max-w-screen-2xl lg:max-w-[1280px] mx-auto flex items-center w-full justify-between">
         <Logo />
         <div className="space-x-4 md:block md:w-auto flex items-center justify-between w-full">
-          <Navbar/>
-          {/* <Button size="sm" variant="outline" asChild>
-            <Link href="/sign-in">Вхід</Link>
-          </Button>       */}
+          <Navbar />
         </div>
       </div>
     </div>
