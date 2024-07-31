@@ -13,7 +13,7 @@ const Footer = () => {
             <Link href="/courses">Курси</Link>
           </nav>
           <nav className="md:flex md:w-auto flex-col w-full gap-1 justify-start">
-            <p>Навігація</p>
+            <p>Інформація</p>
             <Link href="/about-us">Про нас</Link>
             <Link href="/courses">Курси</Link>
           </nav>
