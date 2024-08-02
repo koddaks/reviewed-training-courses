@@ -5,7 +5,7 @@ import { RejectButton } from '@/components/buttons/reject-button';
 
 const MainPage = () => {
   return (
-    <div className="container mx-auto">
+    <div className="">
       <div className="flex flex-col gap-2 w-[148px]">
         <ApproveButton />
         <RejectButton />
