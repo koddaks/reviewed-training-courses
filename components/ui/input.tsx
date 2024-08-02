@@ -5,10 +5,11 @@ import { cn } from "@/lib/utils"
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
     suffix?: React.ReactNode
+    suffixClassName?: string
   }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, suffix, type, ...props }, ref) => {
+  ({ className, suffix, suffixClassName, type, ...props }, ref) => {
     return (
       <div className="relative">
         <input
@@ -20,7 +21,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         ref={ref}
         {...props}
       />
-       <div className="absolute right-1.5 top-1/2 transform -translate-y-1/2 flex items-center justify-center w-8 h-8 bg-yellow-500 rounded-full bg-yellow">
+       <div className={cn("absolute right-1.5 top-1/2 transform -translate-y-1/2 flex items-center justify-center w-8 h-8 ", suffixClassName)}>
         {suffix}
        </div>
       </div>

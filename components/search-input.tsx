@@ -23,6 +23,7 @@ export const SearchInput = ({
         suffix={
           <Search className="w-5 h-5 hover:opacity-50 transform transition-all duration-300" />
         }
+        suffixClassName="bg-yellow-500 rounded-full bg-yellow"
       />
     </div>
   );
