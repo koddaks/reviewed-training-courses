@@ -4,6 +4,7 @@ import { TagButton } from '@/components/buttons/tag-button';
 import { RejectButton } from '@/components/buttons/reject-button';
 
 const MainPage = () => {
+
   return (
     <div className="">
       <div className="flex flex-col gap-2 w-[148px]">
