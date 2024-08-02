@@ -5,7 +5,7 @@ import "./globals.css";
 const font = Roboto({ weight: ["500", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "reciewED",
+  title: "reviewED",
   description: "Find the best courses for you",
 };
 
