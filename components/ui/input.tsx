@@ -4,12 +4,12 @@ import { cn } from "@/lib/utils"
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
-    suffix?: React.ReactNode
-    suffixClassName?: string
+    icon?: React.ReactNode
+    iconClassName?: string
   }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, suffix, suffixClassName, type, ...props }, ref) => {
+  ({ className, icon, iconClassName, type, ...props }, ref) => {
     return (
       <div className="relative">
         <input
@@ -21,8 +21,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         ref={ref}
         {...props}
       />
-       <div className={cn("absolute right-1.5 top-1/2 transform -translate-y-1/2 flex items-center justify-center w-8 h-8 ", suffixClassName)}>
-        {suffix}
+       <div className={cn("absolute right-1.5 top-1/2 transform -translate-y-1/2 flex items-center justify-center w-8 h-8 ", iconClassName)}>
+        {icon}
        </div>
       </div>
       

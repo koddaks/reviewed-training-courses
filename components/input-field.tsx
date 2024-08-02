@@ -7,24 +7,26 @@ type SearchInputProps = {
   placeholder?: string;
   disabled?: boolean;
   className?: string;
+  icon?: React.ReactNode;
+  iconClassName?: string;
 };
 
-export const SearchInput = ({
+export const InputField = ({
   placeholder,
   disabled,
   className,
+  icon,
+  iconClassName,
 }: SearchInputProps) => {
   return (
-    <div className={cn(className)}>
       <Input
         placeholder={placeholder}
         disabled={disabled}
-        className={cn('rounded-3xl border-black-1000')}
-        suffix={
-          <Search className="w-5 h-5 hover:opacity-50 transform transition-all duration-300" />
+        className={cn('rounded-3xl border-black-1000', className)}
+        icon={
+          icon
         }
-        suffixClassName="bg-yellow-500 rounded-full bg-yellow"
+        iconClassName={iconClassName}
       />
-    </div>
   );
 };
