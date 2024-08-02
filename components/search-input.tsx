@@ -21,7 +21,7 @@ export const SearchInput = ({
         disabled={disabled}
         className={cn('rounded-3xl border-black-1000')}
         suffix={
-          <Search className="w-6 h-6 hover:opacity-50 transform transition-all duration-300" />
+          <Search className="w-5 h-5 hover:opacity-50 transform transition-all duration-300" />
         }
       />
     </div>
