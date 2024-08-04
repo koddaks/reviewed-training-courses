@@ -9,7 +9,7 @@ const Navbar = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
   return (
     <div className="flex items-center justify-between w-full">
-      <div className="flex w-full">
+      <div className="flex">
         <Button size="sm" variant="ghost" asChild>
           <Link href="/courses">Курси</Link>
         </Button>
@@ -24,7 +24,6 @@ const Navbar = () => {
           <Button
             onClick={() => setIsAuthorized(!isAuthorized)}
             size="lg"
-            variant="daylight"
             asChild
           >
             {/* <Link href="/sign-in">Вхід</Link> */}
