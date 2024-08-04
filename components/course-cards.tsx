@@ -2,13 +2,7 @@
 
 import { courses } from '@/mock/courses';
 import CourseItem from './course-item';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from './ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, CarouselDots } from './ui/carousel';
 
 const CourseCards = () => {
   return (
@@ -31,8 +25,10 @@ const CourseCards = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <div className="flex justify-center">
+             <CarouselDots/>
+
+            </div>
           </Carousel>
         </div>
       </div>
