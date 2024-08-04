@@ -8,7 +8,7 @@ const SearchSection = () => {
     <section className="container w-full flex flex-row justify-between items-center">
       <div className="w-1/2 flex flex-col gap-4 ">
         <h1 className="text-5xl font-bold">
-          Знайдіть свій <span className="text-yellow">курс</span>
+          Знайдіть свій <span className="text-yellowLight">курс</span>
         </h1>
         <p>
           Шукаєте курси для розвитку? Введіть назву або використайте фільтри для
@@ -32,6 +32,7 @@ const SearchSection = () => {
       <Image
         src="/woman-laptop.png"
         alt="Woman working on laptop"
+        className='w-1/2 mx-auto'
         width={614}
         height={475}
       />
