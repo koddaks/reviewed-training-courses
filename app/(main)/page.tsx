@@ -1,3 +1,4 @@
+import CourseCards from '@/components/course-cards';
 import SearchSection from '@/components/search-section';
 
 const MainPage = () => {
@@ -5,6 +6,7 @@ const MainPage = () => {
   return (
     <>
       <SearchSection />
+      <CourseCards/>
     </>
   );
 };
