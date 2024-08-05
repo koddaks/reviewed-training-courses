@@ -30,7 +30,7 @@ const config = {
         greyLight: "#EBE8FA",
         greyDark: "#616161",
         purple: "#7B34D8",
-        yellow: "#FDD503",
+        yellowLight: "#FDD503",
         
 
 
