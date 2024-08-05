@@ -5,8 +5,8 @@ import Image from 'next/image';
 
 const SearchSection = () => {
   return (
-    <section className="container w-full flex flex-row justify-between items-center">
-      <div className="w-1/2 flex flex-col gap-4 ">
+    <section className="container w-full flex flex-col-reverse lg:flex-row  justify-between items-center gap-5">
+      <div className="w-full lg:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-start gap-4 ">
         <h1 className="text-5xl font-bold">
           Знайдіть свій <span className="text-yellowLight">курс</span>
         </h1>
@@ -14,7 +14,7 @@ const SearchSection = () => {
           Шукаєте курси для розвитку? Введіть назву або використайте фільтри для
           звуження результатів.
         </p>
-        <div className="flex gap-2 items-center w-full">
+        <div className="flex gap-2 items-center w-full justify-center lg:justify-start">
           <div className="relative w-3/6">
             <InputField
               placeholder="Пошук"
@@ -32,7 +32,7 @@ const SearchSection = () => {
       <Image
         src="/woman-laptop.png"
         alt="Woman working on laptop"
-        className='w-1/2 mx-auto'
+        className='w-full lg:w-1/2 mx-auto'
         width={614}
         height={475}
       />

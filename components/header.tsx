@@ -5,9 +5,9 @@ import { Search } from 'lucide-react';
 
 const Header = () => {
   return (
-    <div className="fixed top-0 w-screen z-10 h-[76px] px-4 border-b shadow-xl bg-white flex items-center ">
-      <div className="container mx-auto flex items-center w-full justify-between">
-        <div className="flex items-center justify-between w-1/2">
+    <div className="fixed top-0 w-screen z-10 h-[76px] px-4 border-b shadow-xl bg-white flex items-center">
+      <div className="container mx-auto flex items-center w-full md:px-8 lg:px-6 xl:px-0 justify-between">
+        <div className="flex items-center justify-between w-1/2 gap-0 md:gap-2">
           <Logo />
           <div className="relative md:w-1/2 w-full">
             <InputField

@@ -17,7 +17,7 @@ const CourseCards = () => {
   return (
     <section className="py-12">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-bold mb-6">Найкращі школи</h2>
+        <h2 className="text-4xl font-bold mb-6 text-center lg:text-start">Найкращі школи</h2>
 
         <div className="w-full flex justify-center">
           <Carousel
@@ -28,7 +28,7 @@ const CourseCards = () => {
           >
             <CarouselContent className=" flex">
               {Array.from(courses).map((course, index) => (
-                <CarouselItem key={index} className="basis-1/4">
+                <CarouselItem key={index} className=" basis-2/3 sm:basis-1/2  lg:basis-1/4">
                   <CourseItem
                     title={course.title}
                     description={course.description}
