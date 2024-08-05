@@ -12,7 +12,7 @@ import {
 import Autoplay from 'embla-carousel-autoplay';
 
 const CourseCards = () => {
-  const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: true, }));
+  const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true, }));
 
   return (
     <section className="py-12">
