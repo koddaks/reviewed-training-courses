@@ -12,7 +12,7 @@ export const Logo = ({ variant }: LogoProps) => {
   
   return (
     <Link href="/">
-      <div className="hover:opacity-75 transition items-center gap-x-2 hidden md:flex">
+      <div className="hover:opacity-75 transition items-center gap-x-2 hidden sm:flex">
         <Image src={variant === 'white' ? '/logo-white.svg' : '/logo-black.svg'} alt="logo" width={width} height={height} />
       </div>
     </Link>
