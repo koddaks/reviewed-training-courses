@@ -6,7 +6,7 @@ import SearchSection from '@/components/search-section';
 const MainPage = () => {
 
   return (
-    <div className="px-8 lg:px-6 xl:px-4">
+    <div className="px-2 lg:px-6 xl:px-4">
       <SearchSection />
       <CourseCards/>
       <HowItWorks/>
