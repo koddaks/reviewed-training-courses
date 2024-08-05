@@ -8,7 +8,7 @@ const HowItWorks = () => {
         <h2 className="text-3xl font-bold mb-6">Як це працює</h2>
         <div className="flex flex-col gap-8">
           {steps.map((step, index) => (
-            <HowItWorksItem key={index} step={step} />
+            <HowItWorksItem key={index} title={step.title} description={step.description} />
           ))}
         </div>
       </div>
