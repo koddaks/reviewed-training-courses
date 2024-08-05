@@ -16,7 +16,7 @@ const HowItWorksItem = ({ title, description }: HowItWorksItemProps) => {
           height={261}
         />
       </div>
-      <div className="w-1/2 flex flex-col justify-center ">
+      <div className="w-1/2 flex flex-col justify-center">
         <h3 className="text-xl font-bold mb-2">{title}</h3>
         <p className="text-gray-600">{description}</p>
       </div>
