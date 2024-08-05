@@ -24,8 +24,7 @@ const CourseCards = () => {
             className="w-full max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-7xl"
             plugins={[plugin.current]}             
             onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
-            
+            onMouseLeave={() => plugin.current.isPlaying() ?  plugin.current.reset() : plugin.current.play()}            
           >
             <CarouselContent className=" flex">
               {Array.from(courses).map((course, index) => (
