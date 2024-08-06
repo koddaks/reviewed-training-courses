@@ -18,7 +18,7 @@ type UserNavProps = {
 const UserNav = ({ onClick }: UserNavProps) => {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger  className="flex items-center justify-end gap-1">
+      <DropdownMenuTrigger className="flex items-center justify-end gap-1">
         <Button size="icon" variant="ghost" className="w-4 h-4" asChild>
           <EllipsisVertical />
         </Button>

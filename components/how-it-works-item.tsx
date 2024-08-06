@@ -1,9 +1,9 @@
 import Image from 'next/image';
 
 type HowItWorksItemProps = {
-    title: string;
-    description: string;
-}
+  title: string;
+  description: string;
+};
 
 const HowItWorksItem = ({ title, description }: HowItWorksItemProps) => {
   return (

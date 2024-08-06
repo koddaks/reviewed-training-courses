@@ -17,14 +17,12 @@ export const InputField = ({
   iconClassName,
 }: InputFieldProps) => {
   return (
-      <Input
-        placeholder={placeholder}
-        disabled={disabled}
-        className={cn('rounded-3xl border-black', className)}
-        icon={
-          icon
-        }
-        iconClassName={iconClassName}
-      />
+    <Input
+      placeholder={placeholder}
+      disabled={disabled}
+      className={cn('rounded-3xl border-black', className)}
+      icon={icon}
+      iconClassName={iconClassName}
+    />
   );
 };

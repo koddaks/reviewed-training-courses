@@ -40,12 +40,18 @@ const CourseItem = ({
               (<span>{rating}</span>)
             </p>
           </div>
-          <div className="text-center text-xs lg:text-sm">{reviews} відгуки</div>
+          <div className="text-center text-xs lg:text-sm">
+            {reviews} відгуки
+          </div>
         </div>
       </div>
 
-      <h2 className="text-center sm:text-start text-xs sm:text-sm lg:text-xl font-bold mb-1 sm:mb-2">{title}</h2>
-      <div className="text-black text-xs lg:text-sm line-clamp-3 text-balance sm:line-clamp-5 lg:line-clamp-4">{description}</div>
+      <h2 className="text-center sm:text-start text-xs sm:text-sm lg:text-xl font-bold mb-1 sm:mb-2">
+        {title}
+      </h2>
+      <div className="text-black text-xs lg:text-sm line-clamp-3 text-balance sm:line-clamp-5 lg:line-clamp-4">
+        {description}
+      </div>
 
       <div className="text-gray-400 text-[10px] text-center sm:text-start lg:text-xs font-normal mt-auto">
         Навчалося {studentsWhichPassedCourse} студентів

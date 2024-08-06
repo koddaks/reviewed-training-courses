@@ -24,10 +24,14 @@ const PopularCoursesItem = ({
     >
       <Image src={ImageSrc} alt="Course" width={120} height={120} />
 
-      <div className="text-xs md:text-xl font-bold mb-2 text-center">{title}</div>
+      <div className="text-xs md:text-xl font-bold mb-2 text-center">
+        {title}
+      </div>
       <div className="text-gray-600 w-full flex flex-row md:flex-row justify-between mt-auto items-center">
-        <p className='truncate sm:text-xs'>{courses} <span>курсів</span></p>
-        <ArrowUpRight className='w-4 h-4 md:w-6 md:h-6' />
+        <p className="truncate sm:text-xs">
+          {courses} <span>курсів</span>
+        </p>
+        <ArrowUpRight className="w-4 h-4 md:w-6 md:h-6" />
       </div>
     </div>
   );
