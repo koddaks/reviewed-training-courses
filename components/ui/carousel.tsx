@@ -217,7 +217,7 @@ const CarouselDots = React.forwardRef<HTMLDivElement, {}>((_, ref) => {
           key={index}
           className={cn(
             "h-3 w-3 rounded-full mx-1",
-            selectedIndex === index ? "bg-black-1000" : "bg-gray-300"
+            selectedIndex === index ? " bg-black" : "bg-gray-300"
           )}
           onClick={() => scrollTo(index)}
         />

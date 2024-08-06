@@ -19,31 +19,29 @@ const config = {
         xl: '1280px',
       },
       padding: {
-        'DEFAULT': '0.5rem',
-        'sm': '1rem',
-        'md': '1.5rem',
-        'lg': '1.5rem',
-        'xl': '1rem',
-      },     
+        DEFAULT: '0.5rem',
+        sm: '1rem',
+        md: '1.5rem',
+        lg: '1.5rem',
+        xl: '1rem',
+      },
     },
     extend: {
       colors: {
-        black: {
-          1000: '#232323',
+        black: '#232323',
+        yellow: {
+          50: '#FFFEE7',
+          100: '#FFFFC1',
+          200: '#FFFC87',
+          300: '#FFF342',
+          400: '#FFE40F',
+          500: '#FDD503',
+          600: '#CF9D00',
+          700: '#A57103',
+          800: '#88570B',
+          900: '#74470F',
+          950: '#442504',
         },
-        daylight: '#B5D8FF',
-        bluelight: "#007AFF",
-        green: "#2CA129",
-        greendark: "#038A00",
-        red: "#D83434",
-        grey: "#EAEAEAB2",
-        greyLight: "#EBE8FA",
-        greyDark: "#616161",
-        purple: "#7B34D8",
-        yellowLight: "#FDD503",
-        
-
-
 
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

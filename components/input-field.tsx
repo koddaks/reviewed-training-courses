@@ -1,9 +1,7 @@
 import { cn } from '@/lib/utils';
 import { Input } from './ui/input';
 
-import { Search } from 'lucide-react';
-
-type SearchInputProps = {
+type InputFieldProps = {
   placeholder?: string;
   disabled?: boolean;
   className?: string;
@@ -17,12 +15,12 @@ export const InputField = ({
   className,
   icon,
   iconClassName,
-}: SearchInputProps) => {
+}: InputFieldProps) => {
   return (
       <Input
         placeholder={placeholder}
         disabled={disabled}
-        className={cn('rounded-3xl border-black-1000', className)}
+        className={cn('rounded-3xl border-black', className)}
         icon={
           icon
         }
