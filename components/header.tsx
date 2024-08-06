@@ -5,8 +5,8 @@ import { Search } from 'lucide-react';
 
 const Header = () => {
   return (
-    <div className="fixed top-0 w-screen z-10 h-[76px] px-4 border-b shadow-xl bg-white flex items-center">
-      <div className="container mx-auto flex items-center w-full justify-between md:px-8 lg:px-6 xl:px-0 ">
+    <div className="fixed top-0 w-screen z-10 h-[76px] border-b shadow-xl bg-white flex items-center">
+      <div className="container mx-auto flex items-center w-full justify-between">
         <div className="flex items-center sm:justify-between w-1/2 sm:w-1/2 gap-0 sm:gap-2">
           <Logo />
           <div className="relative w-full sm:w-1/2">
