@@ -22,7 +22,7 @@ const CourseCards = () => {
 
       <div className="w-full flex justify-center">
         <Carousel
-          className="w-full max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-7xl"
+          className="w-full max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-5xl xl:max-w-7xl"
           plugins={[plugin.current]}
           onMouseEnter={plugin.current.stop}
           onMouseLeave={() =>
@@ -35,7 +35,7 @@ const CourseCards = () => {
             {Array.from(courses).map((course, index) => (
               <CarouselItem
                 key={index}
-                className=" basis-2/3 sm:basis-1/2  lg:basis-1/4"
+                className="basis-11/12 sm:basis-1/2 md:basis-1/3  lg:basis-1/4"
               >
                 <CourseItem
                   title={course.title}
