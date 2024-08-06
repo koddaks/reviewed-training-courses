@@ -30,8 +30,15 @@ const ArticlesItem = ({
       </div>
 
       <div className="w-full">
-        <Button variant="link" className="flex flex-col md:flex-row justify-end p-0" asChild>
-          <Link href={link} className="font-bold underline underline-offset-4 md:items-end lg:justify-start">
+        <Button
+          variant="link"
+          className="flex flex-col md:flex-row justify-end p-0"
+          asChild
+        >
+          <Link
+            href={link}
+            className="font-bold underline underline-offset-4 md:items-end lg:justify-start"
+          >
             {linkText}
           </Link>
         </Button>
