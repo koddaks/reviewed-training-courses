@@ -21,7 +21,7 @@ const PopularCourses = () => {
             key={index}
             title={direction.name}
             courses={direction.courses}
-            ImageSrc="/rectangle-small.png"
+            imageSrc="/rectangle-small.png"
             className={cn('col-span-10', colSpans[index])}
           />
         ))}

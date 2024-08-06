@@ -1,3 +1,4 @@
+import Articles from '@/components/articles';
 import CourseCards from '@/components/course-cards';
 import HowItWorks from '@/components/how-it-works';
 import PopularCourses from '@/components/popular-courses';
@@ -11,6 +12,7 @@ const MainPage = () => {
       <CourseCards/>
       <HowItWorks/>
       <PopularCourses/>
+      <Articles/>
     </div>
   );
 };

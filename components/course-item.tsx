@@ -7,7 +7,7 @@ type CourseItemProps = {
   reviews: number;
   rating: number;
   studentsWhichPassedCourse: number;
-  ImageSrc?: string;
+  imageSrc?: string;
 };
 
 const CourseItem = ({
@@ -16,13 +16,13 @@ const CourseItem = ({
   reviews,
   rating,
   studentsWhichPassedCourse,
-  ImageSrc,
+  imageSrc,
 }: CourseItemProps) => {
   return (
     <div className="flex flex-col bg-white shadow rounded-md p-4 w-full  max-w-[298px] h-[270px]">
       <div className="flex flex-col sm:flex-row gap-2 lg:gap-0 justify-between mb-2 items-center">
-        {ImageSrc ? (
-          <Image src={ImageSrc} alt="course-image" />
+        {imageSrc ? (
+          <Image src={imageSrc} alt="course-image" />
         ) : (
           <div className=" w-16 h-14 sm:w-1/2 sm:h-20 lg:w-[120px] lg:h-[80px] bg-gray-200" />
         )}

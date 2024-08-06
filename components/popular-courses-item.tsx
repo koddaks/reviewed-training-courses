@@ -5,14 +5,14 @@ import Image from 'next/image';
 type PopularCoursesItemProps = {
   title: string;
   courses: number;
-  ImageSrc: string;
+  imageSrc: string;
   className?: string;
 };
 
 const PopularCoursesItem = ({
   title,
   courses,
-  ImageSrc,
+  imageSrc,
   className,
 }: PopularCoursesItemProps) => {
   return (
@@ -22,7 +22,7 @@ const PopularCoursesItem = ({
         className
       )}
     >
-      <Image src={ImageSrc} alt="Course" width={120} height={120} />
+      <Image src={imageSrc} alt="Course" width={120} height={120} />
 
       <h3 className="text-xs md:text-xl font-bold mb-2 text-center">
         {title}
