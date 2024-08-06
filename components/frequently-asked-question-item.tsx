@@ -16,7 +16,7 @@ const FrequentlyAskedQuestionItem = ({
       <AccordionItem value={`item-${value}`} className=" border-black rounded-lg bg-gray-200">
         <AccordionTrigger >
             <div className="px-4 text-start w-full">
-                <p className="line-clamp-1 w-4/5">{question}</p>
+                <p className="line-clamp-1 w-full">{question}</p>
             </div>
         </AccordionTrigger>
         <AccordionContent>
