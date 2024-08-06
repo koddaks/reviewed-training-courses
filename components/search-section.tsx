@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const SearchSection = () => {
   return (
-    <section className="container w-full flex flex-col-reverse lg:flex-row  justify-between items-center gap-5">
+    <section className="w-full flex flex-col-reverse lg:flex-row  justify-between items-center gap-5">
       <div className="w-full lg:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-start gap-4 ">
         <h1 className="text-5xl font-bold">
           Знайдіть свій <span className="text-yellowLight">курс</span>

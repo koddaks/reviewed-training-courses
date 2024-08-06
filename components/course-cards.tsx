@@ -16,7 +16,7 @@ const CourseCards = () => {
 
   return (
     <section className="py-12">
-      <div className="container mx-auto">
+      
         <h2 className="text-4xl font-bold mb-6 text-center lg:text-start">Найкращі школи</h2>
 
         <div className="w-full flex justify-center">
@@ -44,7 +44,6 @@ const CourseCards = () => {
             </div>
           </Carousel>
         </div>
-      </div>
     </section>
   );
 };
