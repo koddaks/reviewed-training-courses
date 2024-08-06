@@ -24,9 +24,9 @@ const PopularCoursesItem = ({
     >
       <Image src={ImageSrc} alt="Course" width={120} height={120} />
 
-      <div className="text-xs md:text-xl font-bold mb-2 text-center">
+      <h3 className="text-xs md:text-xl font-bold mb-2 text-center">
         {title}
-      </div>
+      </h3>
       <div className="text-gray-600 w-full flex flex-row md:flex-row justify-between mt-auto items-center">
         <p className="truncate sm:text-xs">
           {courses} <span>курсів</span>

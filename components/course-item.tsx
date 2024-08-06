@@ -46,9 +46,9 @@ const CourseItem = ({
         </div>
       </div>
 
-      <h2 className="text-center sm:text-start text-xs sm:text-sm lg:text-xl font-bold mb-1 sm:mb-2">
+      <h3 className="text-center sm:text-start text-xs sm:text-sm lg:text-xl font-bold mb-1 sm:mb-2">
         {title}
-      </h2>
+      </h3>
       <div className="text-black text-xs lg:text-sm line-clamp-3 text-balance sm:line-clamp-5 lg:line-clamp-4">
         {description}
       </div>
