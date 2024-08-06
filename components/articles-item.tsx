@@ -18,7 +18,7 @@ const ArticlesItem = ({
   imageSrc,
 }: ArticlesItemProps) => {
   return (
-    <div className="min-h-[453px] md:min-h-[300px] lg:max-w-80 xl:max-w-[404px] flex flex-col md:items-center md:text-center lg:text-start justify-between bg-gray-300 lg:bg-transparent p-4 rounded-md mb-4">
+    <div className="min-h-[453px] md:min-h-[300px]   lg:max-w-80 xl:max-w-[404px] flex flex-col md:items-center md:text-center lg:text-start justify-between bg-gray-300 lg:bg-transparent p-4 rounded-md mb-4">
       <div className="flex flex-col md:flex-row lg:flex-col">
         <div className="flex justify-center">
           <Image src={imageSrc} alt="Article image" width={404} height={269} />
