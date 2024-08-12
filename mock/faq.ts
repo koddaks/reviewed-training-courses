@@ -30,6 +30,21 @@ export const faqData = [
     {
       question: "What role do pets play in the lives of refugees seeking asylum?",
       answer: "Pets can provide emotional support, comfort, and a sense of normalcy for refugees seeking asylum, helping them cope with the stress and trauma of displacement."
+    },
+    {
+      question: "Do refugee shelters accommodate pets as well?",
+      answer: "Some refugee shelters do accommodate pets, but this varies by location and the resources available. It's important to check with specific shelters for their policies."
+    },
+    {
+      question: "What role do pets play in the lives of refugees seeking asylum?",
+      answer: "Pets can provide emotional support, comfort, and a sense of normalcy for refugees seeking asylum, helping them cope with the stress and trauma of displacement."
+    },    {
+      question: "Do refugee shelters accommodate pets as well?",
+      answer: "Some refugee shelters do accommodate pets, but this varies by location and the resources available. It's important to check with specific shelters for their policies."
+    },
+    {
+      question: "What role do pets play in the lives of refugees seeking asylum?",
+      answer: "Pets can provide emotional support, comfort, and a sense of normalcy for refugees seeking asylum, helping them cope with the stress and trauma of displacement."
     }
   ];
   
