@@ -1,7 +1,8 @@
-import { articles } from '@/mock/articles';
 import ArticlesItem from './articles-item';
+import { fetchAllArticles } from '@/data/articles';
 
-const Articles = () => {
+const Articles = async () => {
+  const articles = await fetchAllArticles();
   return (
     <section>
       <h2 className="text-3xl font-bold mb-6 text-center">Статті</h2>

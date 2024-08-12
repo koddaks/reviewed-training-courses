@@ -3,14 +3,15 @@ import Image from 'next/image';
 type HowItWorksItemProps = {
   title: string;
   description: string;
+  imageSrc: string;
 };
 
-const HowItWorksItem = ({ title, description }: HowItWorksItemProps) => {
+const HowItWorksItem = ({ title, description, imageSrc }: HowItWorksItemProps) => {
   return (
     <div className="flex even:flex-row-reverse justify-between">
       <div className="w-1/3">
         <Image
-          src="/rectangle.png"
+          src={imageSrc}
           alt="How it works"
           width={404}
           height={261}

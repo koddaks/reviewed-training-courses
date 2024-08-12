@@ -10,6 +10,7 @@ const HowItWorks = () => {
           <HowItWorksItem
             key={index}
             title={step.title}
+            imageSrc="/rectangle.png"
             description={step.description}
           />
         ))}
