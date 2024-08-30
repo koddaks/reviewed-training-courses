@@ -25,3 +25,16 @@ export  type Courses = {
     previous: string | null;
     results: Course[];
 }
+
+export type CourseDetails = {
+    id: number;
+    title: string;
+    category: number | null;
+    price: string;
+    company: string;
+    age: string;
+    location: string;
+    website: string;
+    contact: string;
+    description: string;
+}

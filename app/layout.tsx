@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Open_Sans } from 'next/font/google';
+import './globals.css';
 
-const font = Open_Sans({ weight: ["400", "700"], subsets: ["latin"] });
+const font = Open_Sans({ weight: ['400', '700'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "reviewED",
-  description: "Find the best courses for you",
+  title: 'reviewED',
+  description: 'Find the best courses for you',
 };
 
 export default function RootLayout({
@@ -16,7 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={font.className}>{children}</body>
+      <body className={font.className}>
+        {children}
+      </body>
     </html>
   );
 }
