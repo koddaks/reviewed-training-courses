@@ -7,7 +7,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
     <div className="flex flex-col h-screen">
       <Header />
       <main className="pt-28 pb-20 bg-gray-100 flex-grow">
-        <div className='container'>
+        <div className='container mb-6'>
           <CustomBreadcrumbs />
         </div>
         {children}

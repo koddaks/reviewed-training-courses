@@ -14,12 +14,12 @@ export const createAPI = (): AxiosInstance => {
     });
   
     api.interceptors.request.use((config) => {
-      console.log('Starting Request', config);
+      // console.log('Starting Request', config);
       return config;
     });
   
     api.interceptors.response.use((response) => {
-      console.log('Response:', response);
+      // console.log('Response:', response);
       return response;
     }, (error) => {
       console.error('Error Response:', error);
