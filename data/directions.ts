@@ -1,5 +1,5 @@
 import { directions } from "@/mock/directions";
 
-export async function fetchAllArticles() {
+export async function fetchDirections() {
  return directions
 }

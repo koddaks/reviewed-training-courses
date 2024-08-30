@@ -1,7 +1,7 @@
 import axios, { AxiosInstance } from 'axios';
 
 
-const BASE_URL = 'https://otzovik.azurewebsites.net/api/v1';
+const BASE_URL = 'https://otzovik-api.azurewebsites.net/api/v1';
 const REQUEST_TIMEOUT = 5000;
 
 export const createAPI = (): AxiosInstance => {

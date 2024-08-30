@@ -1,6 +1,5 @@
 import Articles from '@/components/articles';
-import CategoriesList from '@/components/categories-list';
-import CourseCards from '@/components/course-cards';
+import CourseCards from '@/components/best-courses';
 import FrequentlyAskedQuestions from '@/components/frequently-asked-questions';
 import HowItWorks from '@/components/how-it-works';
 import PopularCourses from '@/components/popular-courses';
@@ -12,7 +11,6 @@ const MainPage = async () => {
 
   return (
     <div className="container">
-      <CategoriesList initialCategories={categories} />
       <SearchSection />
       <CourseCards />
       <HowItWorks />

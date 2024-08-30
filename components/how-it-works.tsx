@@ -1,5 +1,5 @@
 import { steps } from '@/mock/how-it-works';
-import HowItWorksItem from './how-it-works-item';
+import HowItWorksItem from './how-it-works-card';
 
 const HowItWorks = () => {
   return (

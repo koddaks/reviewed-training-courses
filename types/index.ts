@@ -11,3 +11,17 @@ export type Categories = {
     previous: string | null;
     results: Category[];
 }
+
+export type Course = {
+    id: number;
+    title: string;
+    price: string;
+    company: string;
+}
+
+export  type Courses = {
+    count: number;
+    next: string | null;
+    previous: string | null;
+    results: Course[];
+}
