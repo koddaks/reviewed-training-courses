@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 type CourseCardProps = {
   id: number;
@@ -36,6 +37,9 @@ const CourseCard = async ({
           height={60}
         />
       </div>
+      <Link  href={`/courses/${id}`}>
+        Open Card
+      </Link>
     </div>
   );
 };
