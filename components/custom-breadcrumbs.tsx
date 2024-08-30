@@ -36,7 +36,7 @@ const CustomBreadcrumbs = () => {
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
-            <Link href={`/`}>Main Page</Link>
+            <Link href={`/`}>Main page</Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
