@@ -27,7 +27,7 @@ const CustomBreadcrumbs = () => {
   const paths = usePathname();
   const pathNames = paths.split('/').filter((path) => path);
 
-  if (pathNames.length === 0) {
+  if (typeof window === 'undefined' || pathNames.length === 0) {
     return null;
   }
 
