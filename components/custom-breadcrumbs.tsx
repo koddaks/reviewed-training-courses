@@ -14,20 +14,14 @@ import { useEffect, useState } from 'react';
 
 const CustomBreadcrumbs = () => {
   const [isClient, setIsClient] = useState(false);
+  const paths = usePathname(); 
+  const pathNames = paths.split('/').filter((path) => path);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  if (!isClient) {
-    return null;
-  }
-
-
-  const paths = usePathname();
-  const pathNames = paths.split('/').filter((path) => path);
-
-  if (typeof window === 'undefined' || pathNames.length === 0) {
+  if (!isClient || pathNames.length === 0) {
     return null;
   }
 
