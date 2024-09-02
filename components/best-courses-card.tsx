@@ -1,7 +1,7 @@
 import { Rating } from '@mui/material';
 import Image from 'next/image';
 
-type CourseItemProps = {
+type BestCoursesCardProps = {
   title: string;
   description: string;
   reviews: number;
@@ -10,14 +10,14 @@ type CourseItemProps = {
   imageSrc?: string;
 };
 
-const CourseItem = ({
+const BestCoursesCard = ({
   title,
   description,
   reviews,
   rating,
   studentsWhichPassedCourse,
   imageSrc,
-}: CourseItemProps) => {
+}: BestCoursesCardProps) => {
   return (
     <div className="flex flex-col bg-white shadow rounded-md p-4 w-full  max-w-[298px] h-[270px]">
       <div className="flex flex-col sm:flex-row gap-2 lg:gap-0 justify-between mb-2 items-center">
@@ -60,4 +60,4 @@ const CourseItem = ({
   );
 };
 
-export default CourseItem;
+export default BestCoursesCard;

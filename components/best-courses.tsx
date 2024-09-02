@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { courses } from '@/mock/courses';
-import CourseItem from './course-item';
+import CourseItem from './best-courses-card';
 import {
   Carousel,
   CarouselContent,
@@ -11,7 +11,7 @@ import {
 } from './ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 
-const CourseCards = () => {
+const BestCourses = () => {
   const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
 
   return (
@@ -56,4 +56,4 @@ const CourseCards = () => {
   );
 };
 
-export default CourseCards;
+export default BestCourses;

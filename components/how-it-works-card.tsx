@@ -1,12 +1,12 @@
 import Image from 'next/image';
 
-type HowItWorksItemProps = {
+type HowItWorksCardProps = {
   title: string;
   description: string;
   imageSrc: string;
 };
 
-const HowItWorksItem = ({ title, description, imageSrc }: HowItWorksItemProps) => {
+const HowItWorksCard = ({ title, description, imageSrc }: HowItWorksCardProps) => {
   return (
     <div className="flex even:flex-row-reverse justify-between">
       <div className="w-1/3">
@@ -25,4 +25,4 @@ const HowItWorksItem = ({ title, description, imageSrc }: HowItWorksItemProps) =
   );
 };
 
-export default HowItWorksItem;
+export default HowItWorksCard;

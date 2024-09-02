@@ -1,5 +1,5 @@
 import { directions } from '@/mock/directions';
-import PopularCoursesItem from './popular-courses-item';
+import PopularCoursesItem from './popular-courses-card';
 import { cn } from '@/lib/utils';
 
 const PopularCourses = () => {

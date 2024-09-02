@@ -2,19 +2,19 @@ import { cn } from '@/lib/utils';
 import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 
-type PopularCoursesItemProps = {
+type PopularCoursesCardProps = {
   title: string;
   courses: number;
   imageSrc: string;
   className?: string;
 };
 
-const PopularCoursesItem = ({
+const PopularCoursesCard = ({
   title,
   courses,
   imageSrc,
   className,
-}: PopularCoursesItemProps) => {
+}: PopularCoursesCardProps) => {
   return (
     <div
       className={cn(
@@ -37,4 +37,4 @@ const PopularCoursesItem = ({
   );
 };
 
-export default PopularCoursesItem;
+export default PopularCoursesCard;
