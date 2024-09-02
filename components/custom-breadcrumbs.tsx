@@ -11,6 +11,7 @@ import {
 } from './ui/breadcrumb';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { capitalizeFirstLetter } from '@/utils';
 
 const CustomBreadcrumbs = () => {
   const [isClient, setIsClient] = useState(false);
@@ -37,10 +38,10 @@ const CustomBreadcrumbs = () => {
         {pathNames.map((pathName, index) => (
           <BreadcrumbItem key={index}>
             {index === pathNames.length - 1 ? (
-              <BreadcrumbPage>{pathName}</BreadcrumbPage>
+              <BreadcrumbPage>{capitalizeFirstLetter(pathName)}</BreadcrumbPage>
             ) : (
               <BreadcrumbLink asChild>
-                <Link href={`/${pathName}`}>{pathName}</Link>
+                <Link href={`/${pathName}`}>{capitalizeFirstLetter(pathName)}</Link>
               </BreadcrumbLink>
             )}
             {index !== pathNames.length - 1 && <BreadcrumbSeparator />}
