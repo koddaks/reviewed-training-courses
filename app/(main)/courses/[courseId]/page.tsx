@@ -1,4 +1,4 @@
-import { fetchCourseById } from '@/data/courses';
+import { fetchCourseById, fetchMockCourseById } from '@/data/courses';
 
 type CoursePageProps = {
   params: {
@@ -9,7 +9,10 @@ type CoursePageProps = {
 
 const CoursePage = async ({ params }: CoursePageProps) => {
   const courseId = params.courseId;
-  const course = await fetchCourseById(courseId);
+  // const course = await fetchCourseById(courseId);
+  const course = await fetchMockCourseById(courseId);
+
+
   return (
     <div className="container">
          <h2>{course?.title}</h2>
