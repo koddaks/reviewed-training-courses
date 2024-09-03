@@ -19,7 +19,7 @@ const config = {
         xl: '1280px',
       },
       padding: {
-        DEFAULT: '0.5rem',
+        DEFAULT: '1rem',
         sm: '1rem',
         md: '1.5rem',
         lg: '1.5rem',

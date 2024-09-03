@@ -24,7 +24,7 @@ const ExpandableText = ({ text }: ExpandableTextProps) => {
     if (isAnimating) {
       timer = setTimeout(() => {
         setIsAnimating(false);
-      }, 900); // Замените 700 на фактическое время анимации в мс
+      }, 700); // Замените 700 на фактическое время анимации в мс
     }
 
     return () => clearTimeout(timer);
@@ -33,7 +33,7 @@ const ExpandableText = ({ text }: ExpandableTextProps) => {
   return (
     <div
       className={cn(
-        'relative text-gray-500 py-4 text-sm w-full transition-max-height overflow-hidden',
+        'relative text-gray-500  text-sm w-full transition-max-height overflow-hidden',
         isExpanded ? 'max-h-transition-screen' : 'max-h-16 overflow-hidden'
       )}
     >
@@ -41,17 +41,14 @@ const ExpandableText = ({ text }: ExpandableTextProps) => {
       <Button
         onClick={toggleText}
         className={cn(
-          'absolute h-4 text-black p-0 bg-white -bottom-[2px] right-2',
+          'absolute h-4 text-black px-0 bg-white bottom-[6px] right-0',
           isExpanded && '-bottom-0 right-1/2 translate-x-1/2 w-full',
           !isAnimating || !isExpanded && '-bottom-0 right-1/2 translate-x-1/2 w-full'
         )}
         variant="ghost"
       >
-        {isAnimating  ? (
+       {isAnimating || isExpanded ? (
           <ChevronUp />
-        ) : isExpanded ? (
-            <ChevronUp />
-          
         ) : (
           '...More Details'
         )}
