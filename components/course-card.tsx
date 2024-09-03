@@ -1,17 +1,12 @@
 'use client';
 
-import { GraduationCap, MapPin, Plus, Star, StarIcon } from 'lucide-react';
+import { GraduationCap, MapPin, ShieldCheck, StarIcon } from 'lucide-react';
 
 import Image from 'next/image';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from './ui/accordion';
-import { useState } from 'react';
+
+import ExpandableText from './expandable-text';
 import { Button } from './ui/button';
-import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 type CourseCardProps = {
   id: number;
@@ -38,15 +33,9 @@ const CourseCard = ({
   contact,
   description,
 }: CourseCardProps) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  const toggleDescription = () => {
-    setIsExpanded(!isExpanded);
-  };
-
   return (
     <div className="w-full h-full bg-white rounded-lg shadow-md p-4 flex flex-col justify-between">
-      <div className="flex flex-row justify-between border-b-2 pb-6 mb-6">
+      <div className="flex flex-row justify-between  pb-6">
         <h2 className="text-sm font-bold w-3/4">{title}</h2>
         <Image
           src={`/card-lemon-logo.svg`}
@@ -55,7 +44,7 @@ const CourseCard = ({
           height={60}
         />
       </div>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 border-t-2 border-b-2 pt-6 pb-4 mb-4">
         <div className="flex">
           <p className="text-gray-500 w-1/2 truncate">
             By <span className="text-black">{company}</span>
@@ -79,9 +68,9 @@ const CourseCard = ({
             <span className="text-xs">(4.0)</span>
           </p>
         </div>
-        <div className="flex gap-2 border-[1px] p-2 rounded-md">
+        <div className="flex gap-1 border-[1px] p-1 rounded-md mb-4">
           <GraduationCap className="text-zinc-400" />
-          <ul className="flex justify-around w-full flex-wrap gap-1 list-inside list-disc">
+          <ul className="flex w-full flex-wrap gap-2 list-inside list-disc">
             <li className="text-yellow-600 bg-yellow-100 px-2 rounded-md">
               <span className="-ml-2">Programming</span>
             </li>
@@ -90,31 +79,23 @@ const CourseCard = ({
             </li>
           </ul>
         </div>
-        <div className="flex flex-col">
-          <div
-            onClick={toggleDescription}
-            className={cn(
-              'relative text-gray-500 p-2 text-sm w-full transition-max-height text-ellipsis overflow-hidden',
-              isExpanded
-                ? 'max-h-transition-screen'
-                : 'max-h-16 overflow-hidden'
-            )}
-          >
-            {description}
-            <Button
-              onClick={toggleDescription}
-              className={cn(
-                'absolute -bottom-[2px] right-2 p-0 bg-white h-4 text-black',
-
-                isExpanded && 'bottom-[10px] right-4'
-              )}
-              variant="ghost"
-            >
-              {isExpanded ? 'Show Less' : '...More Details'}
-            </Button>
-          </div>
+        <div className="mb-2">
+          <ExpandableText text={description} />
+        </div>
+        <div className='flex gap-2 items-center'>
+          <Image
+            src="/verified-users.png"
+            alt="Verified users"
+            width={66}
+            height={24}
+          />
+          <p className="text-gray-400">100 Reviews</p>
+          <ShieldCheck className="text-green-500" />
         </div>
       </div>
+      <Button className="rounded-xl bg-yellow-400 text-black font-bold h-12 hover:bg-yellow-400/70" asChild>
+        <Link href={`/courses/${id}`}>Read reviews</Link>
+      </Button>
     </div>
   );
 };
