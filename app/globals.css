@@ -9,11 +9,11 @@ body,
 }
 
 .transition-max-height {
-  transition: max-height 0.9s ease-in-out;
+  transition: max-height 0.7s ease-in-out;
 }
 
 .max-h-transition-screen {
-  max-height: 4000px;
+  max-height: 10000px;
 }
 
 @layer base {
