@@ -6,7 +6,7 @@ import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
 
 type ExpandableTextProps = {
-  text: string;
+  text: string | undefined;
 };
 
 const ExpandableText = ({ text }: ExpandableTextProps) => {

@@ -1,5 +1,3 @@
-'use client';
-
 import { GraduationCap, MapPin, ShieldCheck, StarIcon } from 'lucide-react';
 
 import Image from 'next/image';
@@ -7,39 +5,29 @@ import Image from 'next/image';
 import ExpandableText from './expandable-text';
 import { Button } from './ui/button';
 import Link from 'next/link';
+import { fetchCourseById } from '@/data/courses';
+import { fetchCompanyById } from '@/data/companies';
 
 type CourseCardProps = {
   id: number;
-  title: string;
-  category: number | null;
-  price: string;
-  company: string;
-  age: string;
-  location: string;
-  website: string;
-  contact: string;
-  description: string;
 };
 
-const CourseCard = ({
-  id,
-  title,
-  category,
-  price,
-  company,
-  age,
-  location,
-  website,
-  contact,
-  description,
-}: CourseCardProps) => {
+const CourseCard = async ({ id }: CourseCardProps) => {
+  const course = await fetchCourseById(id);
+
+  if (!course?.company) {
+    return null;
+  }
+  const company = await fetchCompanyById(course.company);
+  console.log(company);
+
   return (
     <div className="w-full h-full bg-white rounded-lg shadow-md p-4 flex flex-col justify-between">
       <div className="flex flex-row justify-between  pb-6">
-        <h2 className="text-sm font-bold w-3/4">{title}</h2>
+        <h2 className="text-sm font-bold w-3/4">{course?.title}</h2>
         <Image
           src={`/card-lemon-logo.svg`}
-          alt={title}
+          alt={course?.title ? course?.title : 'Course image'}
           width={60}
           height={60}
         />
@@ -47,10 +35,10 @@ const CourseCard = ({
       <div className="flex flex-col gap-2 border-t-2 border-b-2 pt-6 pb-4 mb-4">
         <div className="flex">
           <p className="text-gray-500 w-1/2 truncate">
-            By <span className="text-black">{company}</span>
+            By <span className="text-black">{company?.name}</span>
           </p>
           <div className="flex gap-2 mb-2">
-            <MapPin className="text-gray-500" />{' '}
+            <MapPin className="text-gray-500" />
             <span className="text-green-500">Online</span>
           </div>
         </div>
@@ -62,7 +50,7 @@ const CourseCard = ({
             width={24}
             height={24}
           />
-          <p className="text-zinc-400 text-xs">{price}</p>
+          <p className="text-zinc-400 text-xs">{course?.price}</p>
           <p className="flex gap-1 sm:hidden">
             <StarIcon size={14} className="text-yellow-500 fill-yellow-500" />
             <span className="text-xs">(4.0)</span>
@@ -80,9 +68,9 @@ const CourseCard = ({
           </ul>
         </div>
         <div className="mb-2">
-          <ExpandableText text={description} />
+          <ExpandableText text={course?.description} />
         </div>
-        <div className='flex gap-2 items-center'>
+        <div className="flex gap-2 items-center">
           <Image
             src="/verified-users.png"
             alt="Verified users"
@@ -93,8 +81,11 @@ const CourseCard = ({
           <ShieldCheck className="text-green-500" />
         </div>
       </div>
-      <Button className="rounded-xl bg-yellow-400 text-black font-bold h-12 hover:bg-yellow-400/70" asChild>
-        <Link href={`/courses/${id}`}>Read reviews</Link>
+      <Button
+        className="rounded-xl bg-yellow-400 text-black font-bold h-12 hover:bg-yellow-400/70"
+        asChild
+      >
+        <Link href={`/courses/${course?.id}`}>Read reviews</Link>
       </Button>
     </div>
   );
