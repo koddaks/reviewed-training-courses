@@ -127,7 +127,7 @@ const FiltersForm = ({ className }: FiltersFormProps) => {
             <ChevronDown />
           </AccordionTrigger>
           <AccordionContent>
-            <div className="grid gap-2">
+            <div className="grid gap-2 p-4">
               <Input
                 id="course-type"
                 placeholder="Enter course type"
@@ -149,7 +149,7 @@ const FiltersForm = ({ className }: FiltersFormProps) => {
             <ChevronDown />
           </AccordionTrigger>
           <AccordionContent>
-            <div className="grid gap-2">
+            <div className="grid gap-2 p-4">
               <Input
                 id="company"
                 placeholder="Enter company name"
@@ -171,7 +171,7 @@ const FiltersForm = ({ className }: FiltersFormProps) => {
             <ChevronDown />
           </AccordionTrigger>
           <AccordionContent>
-            <div className="grid gap-2">
+            <div className="grid gap-2 p-4">
               <Input
                 id="location"
                 placeholder="Enter location"
@@ -193,7 +193,7 @@ const FiltersForm = ({ className }: FiltersFormProps) => {
             <ChevronDown />
           </AccordionTrigger>
           <AccordionContent>
-            <div className="grid gap-2">
+            <div className="grid gap-2 p-4">
               <Input
                 id="rating"
                 placeholder="Enter rating"
@@ -215,7 +215,7 @@ const FiltersForm = ({ className }: FiltersFormProps) => {
             <ChevronDown />
           </AccordionTrigger>
           <AccordionContent>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 p-4">
               <Input
                 type="number"
                 id="min-price"
@@ -257,7 +257,7 @@ const FiltersForm = ({ className }: FiltersFormProps) => {
             <ChevronDown />
           </AccordionTrigger>
           <AccordionContent>
-            <div className="grid gap-2">
+            <div className="grid gap-2 p-4">
               <Input
                 id="duration"
                 placeholder="Enter course duration"
@@ -279,7 +279,7 @@ const FiltersForm = ({ className }: FiltersFormProps) => {
             <ChevronDown />
           </AccordionTrigger>
           <AccordionContent>
-            <div className="grid gap-2">
+            <div className="grid gap-2 p-4">
               <Input
                 id="difficulty"
                 placeholder="Enter difficulty level"
