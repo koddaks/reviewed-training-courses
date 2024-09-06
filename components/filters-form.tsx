@@ -300,7 +300,7 @@ const FiltersForm = ({ className }: FiltersFormProps) => {
         <Button type="button" variant="ghost" onClick={clearAllFilters}>
           Clear all
         </Button>
-        <Button type="submit" className="rounded-full bg-yellow-500 text-black">
+        <Button type="button" className="rounded-full bg-yellow-500 text-black">
           Apply filters
         </Button>
       </div>
