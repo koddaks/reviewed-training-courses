@@ -1,3 +1,4 @@
+import { Plus } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
@@ -24,6 +25,7 @@ const FrequentlyAskedQuestionItem = ({
       >
         <AccordionTrigger className="px-4 text-start w-full">
           <span className="line-clamp-1 w-full">{question}</span>
+          <Plus className="h-4 w-4 mr-4 shrink-0 transition-transform duration-200" />
         </AccordionTrigger>
         <AccordionContent className="px-4 text-start w-full">
           {answer}
