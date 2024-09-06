@@ -19,7 +19,6 @@ const CourseCard = async ({ id }: CourseCardProps) => {
     return null;
   }
   const company = await fetchCompanyById(course.company);
-  console.log(company);
 
   return (
     <div className="w-full h-full bg-white rounded-lg shadow-md p-4 flex flex-col justify-between">
@@ -37,15 +36,15 @@ const CourseCard = async ({ id }: CourseCardProps) => {
           <p className="text-gray-500 w-1/2 truncate">
             By <span className="text-black">{company?.name}</span>
           </p>
-          <div className="flex gap-2 mb-2">
+          <div className="flex gap-2">
             <MapPin className="text-gray-500" />
             <span className="text-green-500">Online</span>
           </div>
         </div>
 
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-1 items-center">
           <Image
-            src={`/card.svg`}
+            src={`/icons/card.svg`}
             alt="Credit card image"
             width={24}
             height={24}
@@ -56,7 +55,8 @@ const CourseCard = async ({ id }: CourseCardProps) => {
             <span className="text-xs">(4.0)</span>
           </p>
         </div>
-        <div className="flex gap-1 border-[1px] p-1 rounded-md mb-4">
+        <div className="flex flex-col border-[1px] gap-2 p-1 rounded-md mb-4">
+          <div className='flex gap-1'>
           <GraduationCap className="text-zinc-400" />
           <ul className="flex w-full flex-wrap gap-2 list-inside list-disc">
             <li className="text-yellow-600 bg-yellow-100 px-2 rounded-md">
@@ -66,10 +66,11 @@ const CourseCard = async ({ id }: CourseCardProps) => {
               <span className="-ml-2">Development</span>
             </li>
           </ul>
-        </div>
-        <div className="mb-2">
+          </div>
+         
           <ExpandableText text={course?.description} />
         </div>
+       
         <div className="flex gap-2 items-center">
           <Image
             src="/verified-users.png"
