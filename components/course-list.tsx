@@ -20,9 +20,9 @@ const CourseList = async () => {
         </div>
       </div>
 
-      {/* {courses?.results?.map((course) => (
+      {courses?.results?.map((course) => (
         <CourseCard key={course.id} id={course.id} />
-      ))} */}
+      ))}
     </div>
   );
 };

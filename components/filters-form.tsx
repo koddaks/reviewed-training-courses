@@ -68,18 +68,22 @@ const FiltersForm = ({ className }: FiltersFormProps) => {
 
   return (
     <form className={cn('grid items-start gap-4 w-full pb-4', className)}>
-      {/* Теги выбранных фильтров */}
       <div className="flex flex-wrap gap-2 mb-4 px-4">
         {Object.keys(selectedFilters).map((filterKey) => {
           const key = filterKey as keyof Filters;
-          if (key === 'price' && (selectedFilters.price.min !== 0 || selectedFilters.price.max !== 10000)) {
+          if (
+            key === 'price' &&
+            (selectedFilters.price.min !== 0 ||
+              selectedFilters.price.max !== 10000)
+          ) {
             return (
               <div
                 key={filterKey}
                 className="flex items-center px-3 py-1 bg-gray-200 rounded-full text-sm"
               >
                 <span>
-                  Price: {selectedFilters.price.min} - {selectedFilters.price.max}
+                  Price: {selectedFilters.price.min} -{' '}
+                  {selectedFilters.price.max}
                 </span>
                 <button
                   onClick={() => removeFilter(key)}
@@ -109,7 +113,6 @@ const FiltersForm = ({ className }: FiltersFormProps) => {
           }
           return null;
         })}
-        {/* Кнопка очистки всех фильтров, показывается только если есть выбранные фильтры */}
         {areFiltersSelected() && (
           <button onClick={clearAllFilters} className="text-blue-500 ml-4">
             Clear all
@@ -118,7 +121,6 @@ const FiltersForm = ({ className }: FiltersFormProps) => {
       </div>
 
       <Accordion type="single" collapsible className="w-full">
-        {/* Фильтр по типу курса */}
         <AccordionItem value="courseType">
           <AccordionTrigger className="px-4">
             <p>Course type</p>
@@ -141,7 +143,6 @@ const FiltersForm = ({ className }: FiltersFormProps) => {
           </AccordionContent>
         </AccordionItem>
 
-        {/* Фильтр по компании */}
         <AccordionItem value="company">
           <AccordionTrigger className="px-4">
             <p>Company</p>
@@ -164,7 +165,6 @@ const FiltersForm = ({ className }: FiltersFormProps) => {
           </AccordionContent>
         </AccordionItem>
 
-        {/* Фильтр по местоположению */}
         <AccordionItem value="location">
           <AccordionTrigger className="px-4">
             <p>Location</p>
@@ -187,7 +187,6 @@ const FiltersForm = ({ className }: FiltersFormProps) => {
           </AccordionContent>
         </AccordionItem>
 
-        {/* Фильтр по рейтингу */}
         <AccordionItem value="rating">
           <AccordionTrigger className="px-4">
             <p>Rating</p>
@@ -210,7 +209,6 @@ const FiltersForm = ({ className }: FiltersFormProps) => {
           </AccordionContent>
         </AccordionItem>
 
-        {/* Фильтр по цене */}
         <AccordionItem value="price">
           <AccordionTrigger className="px-4">
             <p>Price</p>
@@ -253,7 +251,6 @@ const FiltersForm = ({ className }: FiltersFormProps) => {
           </AccordionContent>
         </AccordionItem>
 
-        {/* Фильтр по длительности курса */}
         <AccordionItem value="duration">
           <AccordionTrigger className="px-4">
             <p>Course Duration</p>
@@ -276,7 +273,6 @@ const FiltersForm = ({ className }: FiltersFormProps) => {
           </AccordionContent>
         </AccordionItem>
 
-        {/* Фильтр по уровню сложности */}
         <AccordionItem value="difficulty">
           <AccordionTrigger className="px-4">
             <p>Difficulty Level</p>
@@ -300,7 +296,6 @@ const FiltersForm = ({ className }: FiltersFormProps) => {
         </AccordionItem>
       </Accordion>
 
-      {/* Кнопки для сброса и применения фильтров */}
       <div className="flex justify-between mt-4 px-4">
         <Button type="button" variant="ghost" onClick={clearAllFilters}>
           Clear all
