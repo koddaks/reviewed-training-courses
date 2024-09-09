@@ -1,7 +1,5 @@
 'use client';
 
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
@@ -20,7 +18,6 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '@/components/ui/drawer';
-import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 import Image from 'next/image';
 import { useMediaQuery } from '@mui/material';
@@ -34,16 +31,19 @@ const Filters = () => {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <Image
-            src="/icons/filter.svg"
-            width={24}
-            height={24}
-            alt="filter icon"
-          />
+          <div className="flex gap-2 px-4 py-2">
+            <span className="text-black">Filters (3)</span>
+            <Image
+              src="/icons/filter.svg"
+              width={24}
+              height={24}
+              alt="filter icon"
+            />
+          </div>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px] p-0">
           <DialogHeader className="px-4 py-4 pb-2">
-            <DialogTitle className='text-3xl'>Filter by</DialogTitle>
+            <DialogTitle className="text-3xl">Filter by</DialogTitle>
           </DialogHeader>
           <FiltersForm />
         </DialogContent>
@@ -54,12 +54,15 @@ const Filters = () => {
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
-        <Image
-          src="/icons/filter.svg"
-          width={24}
-          height={24}
-          alt="filter icon"
-        />
+        <div className="flex gap-2 px-4 py-2">
+          <Image
+            src="/icons/filter.svg"
+            width={24}
+            height={24}
+            alt="filter icon"
+          />
+          <span>(3)</span>
+        </div>
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">

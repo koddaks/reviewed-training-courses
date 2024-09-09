@@ -7,18 +7,23 @@ import { Button } from './ui/button';
 import Link from 'next/link';
 import { fetchCourseById } from '@/data/courses';
 import { fetchCompanyById } from '@/data/companies';
+import { courseCards } from '@/mock/course-cards';
 
 type CourseCardProps = {
   id: number;
 };
 
 const CourseCard = async ({ id }: CourseCardProps) => {
-  const course = await fetchCourseById(id);
+  const course = courseCards.results.find((course) => course.id === id);
+  // const course = await fetchCourseById(id);
 
-  if (!course?.company) {
-    return null;
-  }
-  const company = await fetchCompanyById(course.company);
+  // if (!course?.company) {
+  //   return null;
+  // }
+  // const company = await fetchCompanyById(course.company);
+  const company = {
+    name: 'Горизонт України'
+  };
 
   return (
     <div className="w-full h-full bg-white rounded-lg shadow-md p-4 flex flex-col justify-between">
@@ -56,21 +61,21 @@ const CourseCard = async ({ id }: CourseCardProps) => {
           </p>
         </div>
         <div className="flex flex-col border-[1px] gap-2 p-1 rounded-md mb-4">
-          <div className='flex gap-1'>
-          <GraduationCap className="text-zinc-400" />
-          <ul className="flex w-full flex-wrap gap-2 list-inside list-disc">
-            <li className="text-yellow-600 bg-yellow-100 px-2 rounded-md">
-              <span className="-ml-2">Programming</span>
-            </li>
-            <li className="text-yellow-600 bg-yellow-100 px-2 rounded-md">
-              <span className="-ml-2">Development</span>
-            </li>
-          </ul>
+          <div className="flex gap-1">
+            <GraduationCap className="text-zinc-400" />
+            <ul className="flex w-full flex-wrap gap-2 list-inside list-disc">
+              <li className="text-yellow-600 bg-yellow-100 px-2 rounded-md">
+                <span className="-ml-2">Programming</span>
+              </li>
+              <li className="text-yellow-600 bg-yellow-100 px-2 rounded-md">
+                <span className="-ml-2">Development</span>
+              </li>
+            </ul>
           </div>
-         
+
           <ExpandableText text={course?.description} />
         </div>
-       
+
         <div className="flex gap-2 items-center">
           <Image
             src="/verified-users.png"
