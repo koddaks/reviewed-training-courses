@@ -28,15 +28,15 @@ const CourseCard = async ({ id }: CourseCardProps) => {
   };
 
   return (
-    <div className="w-full h-full bg-white rounded-lg shadow-md p-5 flex flex-col justify-between">
-      <div className="flex flex-row justify-between  pb-6">
-        <h2 className="text-sm font-bold w-3/4">{course?.title}</h2>
+    <div className="w-full h-full lg:max-w-[1040px] bg-white rounded-lg shadow-md p-5 flex flex-col justify-between">
+      <div className="flex flex-row justify-between lg:items-end pb-6">
+        <h2 className="text-sm md:text-base lg:text-xl font-bold w-3/4">{course?.title}</h2>
         <Image
           src={`/card-lemon-logo.svg`}
           alt={course?.title ? course?.title : 'Course image'}
-          width={60}
-          height={60}
-        />
+          width={104}
+          height={60}    
+        />        
       </div>
       <div className="flex flex-col gap-2 border-t-2 pt-6">
         <div className="flex flex-col md:flex-row md:justify-between">

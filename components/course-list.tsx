@@ -25,10 +25,10 @@ const CourseList = async () => {
           className="border-gray-400 h-[53px] rounded-3xl"
           placeholder="Find your perfect course"
         />
-        <div className="absolute right-2 md:right-32 top-[26px] transform -translate-y-1/2 text-gray-500">
+        <div className="absolute right-2 md:right-32 lg:right-52 top-[26px] transform -translate-y-1/2 text-gray-500">
           <Filters />
         </div>
-        <Button type="button" className="hidden md:block absolute h-11 w-28 right-1 rounded-full top-[26px] transform -translate-y-1/2 bg-yellow-500 hover:bg-yellow-500/70 text-black">
+        <Button type="button" className="hidden md:block absolute h-11 w-28 xl:w-48 right-1 rounded-full top-[26px] transform -translate-y-1/2 bg-yellow-500 hover:bg-yellow-500/70 text-black">
           Search
         </Button>
       </div>
