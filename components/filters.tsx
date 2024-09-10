@@ -31,7 +31,7 @@ const Filters = () => {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <div className="flex gap-2 px-4 py-2">
+          <div className="flex gap-2 px-4 py-2  hover:opacity-75">
             <span className="text-black">Filters (3)</span>
             <Image
               src="/icons/filter.svg"
@@ -53,8 +53,8 @@ const Filters = () => {
 
   return (
     <Drawer open={open} onOpenChange={setOpen}>
-      <DrawerTrigger asChild>
-        <div className="flex gap-2 px-4 py-2">
+      <DrawerTrigger className='' asChild>
+        <div className="flex gap-2 px-4 py-2 hover:opacity-75">
           <Image
             src="/icons/filter.svg"
             width={24}

@@ -24,7 +24,7 @@ const ExpandableText = ({ text }: ExpandableTextProps) => {
     if (isAnimating) {
       timer = setTimeout(() => {
         setIsAnimating(false);
-      }, 700); // Замените 700 на фактическое время анимации в мс
+      }, 700);
     }
 
     return () => clearTimeout(timer);
@@ -37,7 +37,7 @@ const ExpandableText = ({ text }: ExpandableTextProps) => {
         isExpanded ? 'max-h-transition-screen' : 'max-h-16 overflow-hidden'
       )}
     >
-      <p onClick={toggleText}>{text}</p>
+      <p onClick={toggleText} className='pb-4'>{text}</p>
       <Button
         onClick={toggleText}
         className={cn(
