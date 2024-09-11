@@ -12,28 +12,30 @@ import { Rating } from '@mui/material';
 
 type CourseCardProps = {
   id: number;
+  title: string;
+  category: string;
+  price: string;
+  company: string;
+  age: string;
+  location: string;
+  website: string;
+  contact: string;
+  company_logo: string;
+  description: string;
+  average_rating: number;
+  reviews_count: number;
 };
 
-const CourseCard = async ({ id }: CourseCardProps) => {
-  const course = courseCards.results.find((course) => course.id === id);
-  const rating = 4.5;
-  // const course = await fetchCourseById(id);
-
-  // if (!course?.company) {
-  //   return null;
-  // }
-  // const company = await fetchCompanyById(course.company);
-  const company = {
-    name: 'Горизонт України',
-  };
+const CourseCard = async ({ id, title, category, price, company, age, location, website, contact, company_logo, description, average_rating, reviews_count }: CourseCardProps) => {
+ 
 
   return (
     <div className="w-full h-full lg:max-w-[1040px] bg-white rounded-lg shadow-md p-5 flex flex-col justify-between">
       <div className="flex flex-row justify-between lg:items-end pb-6">
-        <h2 className="text-sm md:text-base lg:text-xl font-bold w-3/4">{course?.title}</h2>
+        <h2 className="text-sm md:text-base lg:text-xl font-bold w-3/4">{title}</h2>
         <Image
           src={`/card-lemon-logo.svg`}
-          alt={course?.title ? course?.title : 'Course image'}
+          alt={'Course image'}
           width={104}
           height={60}    
         />        
@@ -42,7 +44,7 @@ const CourseCard = async ({ id }: CourseCardProps) => {
         <div className="flex flex-col md:flex-row md:justify-between">
           <div className="flex flex-row md:gap-4 md:justify-between">
             <p className="text-gray-500 w-1/2 md:w-full truncate">
-              By <span className="text-black">{company?.name}</span>
+              By <span className="text-black">{company}</span>
             </p>
             <div className="flex gap-2">
               <MapPin className="text-gray-500" />
@@ -57,7 +59,7 @@ const CourseCard = async ({ id }: CourseCardProps) => {
               width={24}
               height={24}
             />
-            <p className="text-zinc-400 text-xs">{course?.price}</p>
+            <p className="text-zinc-400 text-xs">{price}</p>
             <p className="flex gap-1 md:hidden items-center">
               <StarIcon size={14} className="text-yellow-500 fill-yellow-500" />
               <span className="text-xs font-bold">(4.0)</span>
@@ -67,12 +69,12 @@ const CourseCard = async ({ id }: CourseCardProps) => {
                 name="half-rating-read"
                 size="small"
                 precision={0.5}
-                value={rating}
+                value={average_rating}
                 readOnly
                 className="text-sm sm:text-base"
               />
               <p className="text-sm">
-                (<span>{rating}</span>)
+                (<span>{average_rating}</span>)
               </p>
             </div>
           </div>
@@ -94,7 +96,7 @@ const CourseCard = async ({ id }: CourseCardProps) => {
             </ul>
           </div>
 
-          <ExpandableText text={course?.description} />
+          <ExpandableText text={description} />
         </div>
 
         <div className="flex flex-col md:flex-row md:justify-between md:items-center">
@@ -116,7 +118,7 @@ const CourseCard = async ({ id }: CourseCardProps) => {
               className="w-full md:w-36 rounded-full bg-yellow-400 text-black font-bold h-10 hover:bg-yellow-400/70"
               asChild
             >
-              <Link href={`/courses/${course?.id}`}>Read reviews</Link>
+              <Link href={`/courses/${id}`}>Read reviews</Link>
             </Button>
           </div>
         </div>

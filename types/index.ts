@@ -22,21 +22,24 @@ export type Course = {
 export type CourseDetails = {
   id: number;
   title: string;
-  category: number | null;
+  category: string;
   price: string;
-  company: number;
+  company: string;
   age: string;
   location: string;
   website: string;
   contact: string;
+  company_logo: string;
   description: string;
+  average_rating: number;
+  reviews_count: number;
 };
 
 export type Courses = {
   count: number;
   next: string | null;
   previous: string | null;
-  results: Course[];
+  results: CourseDetails[];
 };
 
 

@@ -10,13 +10,11 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import Image from 'next/image';
-import { courseCards } from '@/mock/course-cards';
 import { ListFilter } from 'lucide-react';
 import { Button } from './ui/button';
 
 const CourseList = async () => {
-  // const courses = await fetchCourses();
-  const courses = courseCards;
+  const courses = await fetchCourses();
 
   return (
     <div className="flex  flex-col gap-6">
@@ -68,7 +66,7 @@ const CourseList = async () => {
       </div>
 
       {courses?.results?.map((course) => (
-        <CourseCard key={course.id} id={course.id} />
+        <CourseCard key={course.id} id={course.id} title={course.title} category={course.category} price={course.price} company={course.company} age={course.age} location={course.location} website={course.website} contact={course.contact} company_logo={course.company_logo} description={course.description} average_rating={course.average_rating} reviews_count={course.reviews_count} />
       ))}
     </div>
   );
