@@ -1,7 +1,7 @@
 export type Category = {
   id: number;
   name: string;
-  parent: number;
+  // parent: number;
 };
 
 export type Categories = {
@@ -42,17 +42,39 @@ export type Courses = {
   results: CourseDetails[];
 };
 
-
 export type Company = {
-    id: number;
-    name: string;
-    city: string;
-    website: string;
-}
+  id: number;
+  name: string;
+  city: string;
+  website: string;
+  avg_overall_rating: number;
+  total_courses: number;
+  total_reviews_count: number;
+  logo: string;
+};
 
 export type Companies = {
-    count: number;
-    next: string | null;
-    previous: string | null;
-    results: Company[];
-}
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: Company[];
+};
+
+export type Review = {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: {
+    id: number;
+    text: string;
+    rating: number;
+    author: string;
+    status: number;
+    short_description: string;
+    company: string;
+  };
+};
+
+export type Reviews = {
+  results: (Review | null)[];
+};

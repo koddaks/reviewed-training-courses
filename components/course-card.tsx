@@ -1,14 +1,14 @@
-import { GraduationCap, MapPin, ShieldCheck, StarIcon } from 'lucide-react';
+import { GraduationCap, MapPin, ShieldCheck, StarIcon } from "lucide-react";
 
-import Image from 'next/image';
+import Image from "next/image";
 
-import ExpandableText from './expandable-text';
-import { Button } from './ui/button';
-import Link from 'next/link';
-import { fetchCourseById } from '@/data/courses';
-import { fetchCompanyById } from '@/data/companies';
-import { courseCards } from '@/mock/course-cards';
-import { Rating } from '@mui/material';
+import ExpandableText from "./expandable-text";
+import { Button } from "./ui/button";
+import Link from "next/link";
+import { fetchCourseById } from "@/data/courses";
+import { fetchCompanyById } from "@/data/companies";
+import { courseCards } from "@/mock/course-cards";
+import { Rating } from "@mui/material";
 
 type CourseCardProps = {
   id: number;
@@ -26,19 +26,33 @@ type CourseCardProps = {
   reviews_count: number;
 };
 
-const CourseCard = async ({ id, title, category, price, company, age, location, website, contact, company_logo, description, average_rating, reviews_count }: CourseCardProps) => {
- 
-
+const CourseCard = async ({
+  id,
+  title,
+  category,
+  price,
+  company,
+  age,
+  location,
+  website,
+  contact,
+  company_logo,
+  description,
+  average_rating,
+  reviews_count,
+}: CourseCardProps) => {
   return (
     <div className="w-full h-full lg:max-w-[1040px] bg-white rounded-lg shadow-md p-5 flex flex-col justify-between">
       <div className="flex flex-row justify-between lg:items-end pb-6">
-        <h2 className="text-sm md:text-base lg:text-xl font-bold w-3/4">{title}</h2>
+        <h2 className="text-sm md:text-base lg:text-xl font-bold w-3/4">
+          {title}
+        </h2>
         <Image
           src={`/card-lemon-logo.svg`}
-          alt={'Course image'}
+          alt={"Course image"}
           width={104}
-          height={60}    
-        />        
+          height={60}
+        />
       </div>
       <div className="flex flex-col gap-2 border-t-2 pt-6">
         <div className="flex flex-col md:flex-row md:justify-between">
@@ -82,9 +96,11 @@ const CourseCard = async ({ id, title, category, price, company, age, location, 
 
         <div className="flex flex-col border-[1px] gap-2 p-1 py-[9px] rounded-md mb-4">
           <div className="flex gap-1 md:gap-4">
-            <div className='flex gap-2 items-center md:w-48'>
+            <div className="flex gap-2 items-center md:w-48">
               <GraduationCap className="text-zinc-400" />
-              <p className="hidden md:block text-zinc-400 text-sm text-nowrap">Information technology:</p>
+              <p className="hidden md:block text-zinc-400 text-sm text-nowrap">
+                Information technology:
+              </p>
             </div>
             <ul className="flex w-full flex-wrap gap-2 list-inside list-disc">
               <li className="text-yellow-600 bg-yellow-100 px-2 rounded-md">
