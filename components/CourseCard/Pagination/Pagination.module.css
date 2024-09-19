@@ -1,0 +1,13 @@
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination__page a,
+.pagination__break a,
+.pagination__link {
+    display: block;
+    padding: 10px;
+    text-align: center;
+}

@@ -1,0 +1,434 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.title_wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 4px;
+    margin-bottom: 56px;
+}
+
+.logo {
+    min-width: 104px;
+    min-height: 52px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #FDD503;
+    background-image: url(../../../shared/images/CourseCard/logo_mobile.webp);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .logo {
+        background-image: url('../../../shared/images/CourseCard/logo_2x_mobile.webp');
+    }
+}
+
+.name_rating_w {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+}
+
+.rating {
+    display: flex;
+    position: absolute;
+    top: 68px;
+    left: -20px;
+}
+
+.section_course {
+    margin-bottom: 24px;
+}
+
+.title_course {
+    font-size: 20px;
+    margin-bottom: 37px;
+    line-height: 26px;
+}
+
+.price {
+    margin-bottom: 37px;
+    position: relative;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 600;
+}
+
+.price_span {
+    color: #8C8C8C;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: -0.96px;
+}
+
+.price::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #D9D9D9;
+    bottom: -17px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.price::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #D9D9D9;
+    top: -17px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.about_course {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: -0.96px;
+    line-height: 24px;
+}
+
+.title_skill {
+    color: #8C8C8C;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 24px;
+    letter-spacing: -0.96px;
+}
+
+.list_skill {
+    list-style: disc;
+    margin: 0 0 16px 20px;
+}
+
+.item_skill {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -0.96px;
+}
+
+.title_category {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+    margin-bottom: 12px;
+}
+
+.name_category {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 14px;
+    margin-bottom: 12px;
+}
+
+.list_category {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.list_category a {
+    padding: 0;
+    color: #0A66C2;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'liga' off;
+}
+
+.company {
+    margin-bottom: 24px;
+}
+
+.title_company {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+.company_list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.company_item {
+    display: flex;
+    gap: 12px;
+}
+
+.company_text {
+    letter-spacing: -0.96px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.btn_list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+}
+
+.btn_item {
+    width: 100%;
+}
+
+.contact_btn,
+.show_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #FDD503;
+    border-radius: 40px;
+    background-color: #FDD503;
+    width: 100%;
+    align-self: stretch;
+    padding: 8px 0 8px 0;
+    font-family: "Open Sens", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.contact_btn:hover {
+    border-color: #FFF342;
+    background-color: #FFF342;
+}
+
+.contact_btn:active {
+    border-color: #CF9D00;
+    background-color: #CF9D00;
+}
+
+
+.show_btn {
+    background-color: #FAFAFA;
+}
+
+.title_rewiew {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 26px;
+}
+
+.btn_feedback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #FDD503;
+    border-radius: 40px;
+    background-color: #FDD503;
+    width: 100%;
+    align-self: stretch;
+    padding: 8px 0 8px 0;
+    font-family: "Open Sens", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 24px;
+}
+
+.btn_feedback:hover {
+    border-color: #FFF342;
+    background-color: #FFF342;
+}
+
+.btn_feedback:active {
+    border-color: #CF9D00;
+    background-color: #CF9D00;
+}
+
+.noFeedback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 0 40px 0;
+}
+
+.noFeedback_vector {
+    margin-bottom: 32px;
+}
+
+.noFeedback_title {
+    color: #939090;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+    margin-bottom: 5px;
+}
+
+.noFeedback_text {
+    text-align: center;
+    color: #A0A0A0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+@media only screen and (min-width: 768px) {
+    .rating {
+        display: flex;
+        position: static;
+        top: auto;
+        left: auto;
+    }
+
+    .title_wrapper {
+        gap: 20px;
+    }
+
+    .name_rating_w {
+        gap: 12px;
+    }
+
+    .logo {
+        min-width: 138px;
+        min-height: 68px;
+        background-image: url(../../../shared/images/CourseCard/logo_desktop_and_tablet.webp);
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+        .logo {
+            background-image: url('../../../shared/images/CourseCard/logo_2x_desktop_and_tablet.webp');
+        }
+    }
+
+    .name {
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 36px;
+    }
+
+    .title_course {
+        font-size: 24px;
+        margin-bottom: 41px;
+        line-height: 31px;
+    }
+
+    .price {
+        margin-bottom: 40px;
+    }
+
+    .price::after {
+        bottom: -20px;
+    }
+
+
+    .price::before {
+        top: -20px
+    }
+
+    .title_category {
+        font-size: 24px;
+        line-height: 29px;
+        margin-bottom: 16px;
+    }
+
+    .company {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 24px;
+    }
+
+    .title_company {
+        font-size: 24px;
+        line-height: 31px;
+    }
+
+    .btn_list {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .contact_btn,
+    .show_btn {
+        width: auto;
+        padding: 8px 24px;
+        white-space: nowrap;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+
+    .section_course {
+        margin-bottom: 32px;
+    }
+
+    .title_course {
+        font-size: 36px;
+        line-height: 47px;
+        margin-bottom: 48px;
+    }
+
+    .price {
+        font-size: 20px;
+        margin-bottom: 48px;
+    }
+
+    .price_span {
+        font-size: 18px;
+        letter-spacing: -1.08px;
+    }
+
+    .price::after {
+        bottom: -25px;
+    }
+
+
+    .price::before {
+        top: -25px;
+    }
+
+    .about_course {
+        margin-bottom: 20px;
+    }
+
+    .title_skill {
+        line-height: 25px;
+        letter-spacing: -1.08px;
+    }
+
+    .list_skill {
+        margin-bottom: 32px;
+    }
+
+    .company {
+        margin-bottom: 32px;
+    }
+
+    .title_company,
+    .title_rewiew {
+        font-size: 36px;
+        line-height: 47px;
+        margin-bottom: 28px;
+    }
+
+}
