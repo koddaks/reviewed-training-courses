@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faLocationDot,
-  faBuildingColumns,
-  faGlobe,
-} from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faLocationDot,
+//   faBuildingColumns,
+//   faGlobe,
+// } from "@fortawesome/free-solid-svg-icons";
 import css from "./CourseCard.module.css";
 import Rating from "./Rating/Rating";
 import Submenu from "./Submenu/Submenu";
@@ -91,15 +91,15 @@ const CourseCard = () => {
 
         <ul className={css.company_list}>
           <li className={css.company_item}>
-            <FontAwesomeIcon icon={faLocationDot} />
+            {/* <FontAwesomeIcon icon={faLocationDot} /> */}
             <p className={css.company_text}>Online</p>
           </li>
           <li className={css.company_item}>
-            <FontAwesomeIcon icon={faBuildingColumns} />
+            {/* <FontAwesomeIcon icon={faBuildingColumns} /> */}
             <p className={css.company_text}>Lemon IT School</p>
           </li>
           <li className={css.company_item}>
-            <FontAwesomeIcon icon={faGlobe} />
+            {/* <FontAwesomeIcon icon={faGlobe} /> */}
             <p className={css.company_text}>lemon.school</p>
           </li>
         </ul>
