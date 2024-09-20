@@ -1,0 +1,42 @@
+.input_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.arrow {
+    position: absolute;
+    top: 43px;
+    left: 172px;
+}
+
+.input {
+    display: flex;
+    width: 220px;
+    padding: 12px 24px;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 40px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px
+}
+
+.input_wrapper select {
+    border: 1px solid #D4D4D8;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 16px;
+}
+
+.input_wrapper label {
+    color: #808080;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}

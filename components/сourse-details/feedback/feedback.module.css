@@ -1,0 +1,165 @@
+.wrapper {
+    padding: 12px;
+    margin-bottom: 24px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 56px;
+}
+
+.user_img {
+    border: 1px solid black;
+    border-radius: 200px;
+    min-width: 60px;
+    min-height: 60px;
+}
+
+.user_info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user_verification {
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    top: 76px;
+    left: -72px;
+}
+
+.user_verification_text {
+    color: #339D5D;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    width: 128px;
+    position: absolute;
+    top: 76px;
+    left: -44px;
+}
+
+
+.user_name {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 25px;
+    margin-bottom: 4px;
+}
+
+.user_status,
+.user_data,
+.action_text {
+    color: #A1A1AA;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.user_data {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 6px;
+}
+
+.review {
+    margin-bottom: 16px;
+}
+
+.review_text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    margin-bottom: 4px;
+}
+
+.review_btn {
+    padding: 0;
+    color: #0A66C2;
+    text-decoration: underline;
+    background: none;
+    background-color: transparent;
+    border: none;
+}
+
+.action {
+    margin-bottom: 24px;
+}
+
+.action_list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.action_report {
+    display: flex;
+    gap: 8px;
+}
+
+.action_social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.action_group {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .wrapper {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .user {
+        margin-bottom: 24px;
+    }
+
+    .user_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .user_verification {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 6px;
+    }
+
+    .user_name {
+        margin-right: 8px;
+    }
+
+    .icon {
+        position: static;
+        top: auto;
+        left: auto;
+    }
+
+    .user_verification_text {
+        margin-left: 4px;
+        position: static;
+        top: auto;
+        left: auto;
+    }
+
+    .user_data {
+        margin-bottom: 18px;
+    }
+
+}

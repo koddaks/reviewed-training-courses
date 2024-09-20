@@ -1,0 +1,33 @@
+.pagination {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.pagination_btn {
+    padding: 10px;
+    border-radius: 40px;
+    border: none;
+    background: rgba(253, 213, 3, 0.10);
+}
+
+.pagination_btn:hover {
+    background: #FDD503;
+}
+
+.pagination_btn:active {
+    background-color: #CF9D00;
+}
+
+.pagination_text {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.pagination_bold {
+    font-weight: 600;
+}
