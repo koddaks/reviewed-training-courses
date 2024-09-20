@@ -4,140 +4,249 @@
 //   faBuildingColumns,
 //   faGlobe,
 // } from "@fortawesome/free-solid-svg-icons";
-import css from "./CourseCard.module.css";
-import Rating from "./Rating/Rating";
-import Submenu from "./Submenu/Submenu";
-import Rewiew from "./Rewiew/Rewiew";
-import Feedback from "./Feedback/Feedback";
-import SortMenuInput from "./SortMenuInput/SortMenuInput";
-import { useState } from "react";
+// import Rating from "./Rating/Rating";
+// import Submenu from "./Submenu/Submenu";
+// import Rewiew from "./Rewiew/Rewiew";
+// import Feedback from "./Feedback/Feedback";
+// import SortMenuInput from "./SortMenuInput/SortMenuInput";
+// import { useState } from "react";
+import Image from "next/image";
+import { Button } from "../ui/button";
+import Link from "next/link";
+import { fetchCourseById } from "@/data/courses";
+import { fetchCompanyById } from "@/data/companies";
+import { courseCards } from "@/mock/course-cards";
+import { Rating } from "@mui/material";
 
-const CourseCard = () => {
-  const rating = 3.1;
+type Subcategory = {
+  id: number;
+  name: string;
+};
 
-  const [sortOption, setSortOption] = useState("Найновіші");
+type Category = {
+  id: number;
+  name: string;
+  subcategories: Subcategory[];
+};
 
-  const handleSortChange = (option) => {
-    setSortOption(option);
-  };
+type Company = {
+  id: number;
+  name: string;
+  website: string;
+};
 
+type CourseDetailsProps = {
+  id: number;
+  title: string;
+  categories: Category[];
+  price: string;
+  company: Company;
+  age: string;
+  location: string | null;
+  website: string;
+  contact: string;
+  company_logo: string;
+  description: string;
+  avg_rating: number;
+  reviews_count: number;
+};
+
+const CourseDetails = async ({
+  id,
+  title,
+  categories,
+  price,
+  company,
+  age,
+  location,
+  website,
+  contact,
+  company_logo,
+  description,
+  avg_rating,
+  reviews_count,
+}: CourseDetailsProps) => {
   return (
-    <div className={css.wrapper}>
-      <div className={css.title_wrapper}>
-        <div className={css.logo}></div>
-        <div className={css.name_rating_w}>
-          <div className={css.name_wrapper}>
-            <p className={css.name}>QA тестування. Тестувальник ПЗ</p>
+    <div className="flex flex-col">
+      <div className="flex items-start justify-start gap-1 mb-14">
+        <Image
+          src={`/card-lemon-logo.svg`}
+          alt={"Course image"}
+          width={104}
+          height={60}
+        />
+        <div className="flex flex-col items-start justify-start relative md:gap-3">
+          <div className="text-lg font-semibold leading-[26px]">
+            <p>{title}</p>
           </div>
-          <div className={css.rating}>
-            <Rating rating={rating} />
-            <p>&nbsp;({rating})</p>
+          <div className="flex absolute top-[68px] left-[-20px] md:static md:top-auto md:left-auto">
+            <Rating
+              name="half-rating-read"
+              size="medium"
+              precision={0.5}
+              value={avg_rating}
+              readOnly
+              className="text-sm sm:text-base"
+            />
           </div>
         </div>
       </div>
 
-      <Submenu />
+      {/* <Submenu /> */}
 
-      <section id="course" className={css.section_course}>
-        <h3 className={css.title_course}>Про курс</h3>
-
-        <p className={css.price}>
-          <span className={css.price_span}>Ціна за навчання:</span> 2 000 грн
-          (місяць)
+      <section id="course" className="mb-6 xl:mb-8">
+        <h3 className="text-lg mb-[37px] leading-[26px] md:text-xl md:mb-[41px] md:leading-[31px] xl:text-4xl xl:leading-[47px] xl:mb-12">
+          Про курс
+        </h3>
+        <p className="relative mb-[37px] text-lg leading-[26px] font-semibold md:mb-10 xl:mb-12">
+          <span className="text-[#8C8C8C] text-base leading-[25px] tracking-[-0.96px] xl:text-lg xl:tracking-[-1.08px]">
+            Ціна за навчання:
+          </span>
+          {price}
         </p>
-
-        <p className={css.about_course}>
-          Курс "QA тестування. Тестувальник ПЗ" допоможе вам освоїти основи
-          тестування програмного забезпечення та стати професіоналом у сфері
-          контролю якості. Ви навчитеся працювати з різними інструментами
-          тестування, створювати тест-кейси, знаходити та документувати
-          помилки,а також зрозумієте роль тестувальника у розробці продукту.
-          Курс також охоплює основи автоматизованого тестування, що дозволить
-          вам ефективніше контролювати якість програмного забезпечення та
-          підвищити свою конкурентоспроможність на ринку праці.
+        <p className="text-base font-semibold mb-4 tracking-[-0.96px] leading-6 xl:mb-5">
+          {description}
         </p>
-
         <div>
-          <p className={css.title_skill}>Навички які ви отримаєте:</p>
-          <ul className={css.list_skill}>
-            <li className={css.item_skill}>Основи тестування ПЗ</li>
-            <li className={css.item_skill}>Розробка і виконання тест-кейсів</li>
-            <li className={css.item_skill}>
+          <p className="text-[#8C8C8C] text-base font-semibold mb-3 leading-6 tracking-[-0.96px] xl:leading-[25px] xl:tracking-[-1.08px]">
+            Навички які ви отримаєте:
+          </p>
+          <ul className="list-disc ml-5 mb-4 xl:mb-8">
+            <li className="font-semibold leading-6 tracking-[-0.96px] tracking-[-0.96px]">
+              Основи тестування ПЗ
+            </li>
+            <li className="font-semibold leading-6 tracking-[-0.96px] tracking-[-0.96px]">
+              Розробка і виконання тест-кейсів
+            </li>
+            <li className="font-semibold leading-6 tracking-[-0.96px] tracking-[-0.96px]">
               Інструменти тестування (Selenium, JIRA тощо)
             </li>
-            <li className={css.item_skill}>Робота з документацією</li>
-            <li className={css.item_skill}>Основи SQL</li>
-            <li className={css.item_skill}>
+            <li className="font-semibold leading-6 tracking-[-0.96px] tracking-[-0.96px]">
+              Робота з документацією
+            </li>
+            <li className="font-semibold leading-6 tracking-[-0.96px] tracking-[-0.96px]">
+              Основи SQL
+            </li>
+            <li className="font-semibold leading-6 tracking-[-0.96px] tracking-[-0.96px]">
               Автоматизація тестування (мови програмування)
             </li>
-            <li className={css.item_skill}>Командна робота</li>
-            <li className={css.item_skill}>Основи Agile і Scrum</li>
-            <li className={css.item_skill}>Аналіз і планування тестів</li>
+            <li className="font-semibold leading-6 tracking-[-0.96px] tracking-[-0.96px]">
+              Командна робота
+            </li>
+            <li className="font-semibold leading-6 tracking-[-0.96px] tracking-[-0.96px]">
+              Основи Agile і Scrum
+            </li>
+            <li className="font-semibold leading-6 tracking-[-0.96px] tracking-[-0.96px]">
+              Аналіз і планування тестів
+            </li>
           </ul>
         </div>
+        <p className="text-lg font-semibold leading-[26px] mb-3 md:text-xl md:leading-[29px] md:mb-4">
+          Категорії курса
+        </p>
+        {/* <p className="font-['Roboto'] text-sm font-semibold leading-[14px] mb-3">
+          {categories[0]?.name}
+        </p> */}
+        <p className="font-['Roboto'] text-sm font-semibold leading-[14px] mb-3">
+          {categories && categories.length > 0
+            ? categories[0].name
+            : "No categories available"}
+        </p>
+        <ul className="list-disc ml-5">
+          {categories &&
+          categories.length > 0 &&
+          categories[0].subcategories ? (
+            categories[0].subcategories.map((subcategory) => (
+              <li className="mb-2" key={subcategory.id}>
+                <a
+                  href="#"
+                  className="text-[#0A66C2] font-['Roboto'] text-sm font-medium leading-6"
+                >
+                  {subcategory.name}
+                </a>
+              </li>
+            ))
+          ) : (
+            <li>Нет доступных подкатегорий</li>
+          )}
 
-        <p className={css.title_category}>Категорії курса</p>
-
-        <p className={css.name_category}>Інформаційні технології, IT</p>
-        <ul className={css.list_category}>
-          <li className={css.item_category}>
-            <a href="#">Програмування, розробка</a>
-          </li>
+          {/* {categories[0].subcategories.map((subcategory) => (
+            <li className="mb-2" key={subcategory.id}>
+              <a
+                href="#"
+                className="text-[#0A66C2] font-['Roboto'] text-sm font-medium leading-6"
+              >
+                {subcategory.name}
+              </a>
+            </li>
+          ))} */}
         </ul>
       </section>
 
-      <section className={css.company} id="company">
-        <h2 className={css.title_company}>Про компанію</h2>
-
-        <ul className={css.company_list}>
-          <li className={css.company_item}>
-            {/* <FontAwesomeIcon icon={faLocationDot} /> */}
-            <p className={css.company_text}>Online</p>
+      <section className="mb-6 md:flex md:flex-col md:items-start xl:mb-8">
+        <h2 className="mb-5 text-lg font-bold leading-[26px] md:text-xl md:leading-[31px] xl:text-4xl xl:leading-[47px] xl:mb-7">
+          Про компанію
+        </h2>
+        <ul className="flex flex-col gap-4 mb-4">
+          <li>
+            <p className="font-semibold leading-6 tracking-[-0.96px]">
+              {location}
+            </p>
           </li>
-          <li className={css.company_item}>
-            {/* <FontAwesomeIcon icon={faBuildingColumns} /> */}
-            <p className={css.company_text}>Lemon IT School</p>
+          <li>
+            <p className="font-semibold leading-6 tracking-[-0.96px]">
+              {company?.name}
+            </p>
           </li>
-          <li className={css.company_item}>
-            {/* <FontAwesomeIcon icon={faGlobe} /> */}
-            <p className={css.company_text}>lemon.school</p>
+          <li>
+            <p className="font-semibold leading-6 tracking-[-0.96px]">
+              {website}
+            </p>
           </li>
         </ul>
 
-        <ul className={css.btn_list}>
-          <li className={css.btn_item}>
-            <button type="button" className={css.contact_btn}>
+        <ul className="flex flex-col gap-2 p-0 m-0 md:flex-row">
+          <li className="w-full">
+            <button
+              type="button"
+              className="flex items-center justify-center border border-[#FDD503] rounded-full bg-[#FDD503] w-full self-stretch py-2 font-['Open_Sans'] text-base font-semibold cursor-pointer transition-colors duration-200 hover:border-[#FFF342] hover:bg-[#FFF342] active:border-[#CF9D00] active:bg-[#CF9D00] md:w-auto md:py-2.5 md:px-6 md:whitespace-nowrap"
+            >
               Зв’язатися з компанією
             </button>
           </li>
-          <li className={css.btn_item}>
-            <button type="button" className={css.show_btn}>
+          <li className="w-full">
+            <button
+              type="button"
+              className="flex items-center justify-center border border-[#FDD503] rounded-full bg-[#FAFAFA] w-full self-stretch py-2 font-['Open_Sans'] text-base font-semibold cursor-pointer md:w-auto md:py-2.5 md:px-6 md:whitespace-nowrap"
+            >
               Показати контакти
             </button>
           </li>
         </ul>
       </section>
-      <h2 className={css.title_rewiew}>Відгуки</h2>
-      <Rewiew rating={rating} />
-      <button type="button" className={css.btn_feedback}>
+      <h2 className="text-lg font-bold leading-[26px] mb-5 md:text-2xl md:leading-[36px] xl:text-4xl xl:leading-[47px] xl:mb-7">
+        Відгуки
+      </h2>
+      {/* <Rewiew /> */}
+      <button
+        type="button"
+        className="flex items-center justify-center border border-[#FDD503] rounded-full bg-[#FDD503] w-full self-stretch py-2 font-['Open_Sans'] text-base font-semibold cursor-pointer mb-6 transition-colors duration-200 hover:border-[#FFF342] hover:bg-[#FFF342] active:border-[#CF9D00] active:bg-[#CF9D00]"
+      >
         Написати відгук
       </button>
-      <SortMenuInput onSortChange={handleSortChange} />
-      <Feedback rating={rating} />
-      <div className={css.noFeedback}>
-        <img
-          src="../../../shared/images/CourseCard/icons/vector.svg"
-          alt="vector"
-          className={css.noFeedback_vector}
-        />
-        <p className={css.noFeedback_title}>Тут ще ніхто не залишив відгук</p>
-        <p className={css.noFeedback_text}>
+      {/* <SortMenuInput onSortChange={handleSortChange} /> */}
+      {/* <Feedback /> */}
+      <div className="flex flex-col items-center justify-center py-10">
+        <p className="text-[#939090] text-lg font-semibold leading-[26px] mb-1">
+          Тут ще ніхто не залишив відгук
+        </p>
+        <p className="text-center text-[#A0A0A0] text-base font-normal leading-[22px]">
           Станьте першим,
-          <br className={css.mobileOnly} /> хто поділиться враженням!
+          <br className="block md:hidden" /> хто поділиться враженням!
         </p>
       </div>
     </div>
   );
 };
 
-export default CourseCard;
+export default CourseDetails;
